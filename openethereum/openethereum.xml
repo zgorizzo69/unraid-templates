@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>openethereum</Name>
+  <Name>open-ethereum</Name>
   <Repository>openethereum/openethereum</Repository>
   <Registry>https://hub.docker.com/r/openethereum/openethereum/</Registry>
   <Network>bridge</Network>
@@ -15,9 +15,9 @@
   <TemplateURL/>
   <Icon>https://openethereum.github.io/images/logo-openethereum.svg</Icon>
   <ExtraParams/>
-  <PostArgs>--base-path /home/openethereum/.local/share/openethereum/ --config /home/parity/.local/share/openethereum/config.toml</PostArgs>
+  <PostArgs>--base-path /home/openethereum/.local/share/openethereum/ --config /home/openethereum/.local/share/openethereum/config.toml</PostArgs>
   <CPUset/>
-  <DateInstalled>1612536247</DateInstalled>
+  <DateInstalled>1612536464</DateInstalled>
   <DonateText>HELP !!!</DonateText>
   <DonateLink>0x2C8c354Bf6E8406682587890A532691a1947aE0e</DonateLink>
   <Description>The fast, light, and robust client for the Ethereum mainnet.</Description>
