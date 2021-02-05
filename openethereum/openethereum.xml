@@ -48,7 +48,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/docker/</HostDir>
+      <HostDir>/mnt/user/blockchain/ethereum/</HostDir>
       <ContainerDir>/home/openethereum/.local/share/openethereum/</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
