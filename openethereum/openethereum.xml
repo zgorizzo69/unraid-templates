@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>open-ethereum</Name>
-  <Repository>openethereum/openethereum/</Repository>
+  <Name>openethereum</Name>
+  <Repository>openethereum/openethereum</Repository>
   <Registry>https://hub.docker.com/r/openethereum/openethereum/</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -14,10 +14,10 @@
   <WebUI/>
   <TemplateURL/>
   <Icon>https://openethereum.github.io/images/logo-openethereum.svg</Icon>
-  <ExtraParams>--base-path /home/openethereum/.local/share/openethereum/ --config /home/parity/.local/share/openethereum/config.toml</ExtraParams>
-  <PostArgs/>
+  <ExtraParams/>
+  <PostArgs>--base-path /home/openethereum/.local/share/openethereum/ --config /home/parity/.local/share/openethereum/config.toml</PostArgs>
   <CPUset/>
-  <DateInstalled>1612534195</DateInstalled>
+  <DateInstalled>1612536247</DateInstalled>
   <DonateText>HELP !!!</DonateText>
   <DonateLink>0x2C8c354Bf6E8406682587890A532691a1947aE0e</DonateLink>
   <Description>The fast, light, and robust client for the Ethereum mainnet.</Description>
@@ -57,7 +57,7 @@
   <Labels/>
   <Config Name="JSON-RPC HTTP" Target="8545" Default="8545" Mode="tcp" Description="JSON-RPC HTTP server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8545</Config>
   <Config Name="Web-Sockets server" Target="8546" Default="8546" Mode="tcp" Description=" Web-Sockets server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8546</Config>
+  <Config Name="base-path" Target="/home/openethereum/.local/share/openethereum/" Default="/mnt/user/appdata/openethereum" Mode="rw" Description="Persistent data directory for blockchain files, keys" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/docker/</Config>
   <Config Name="listener" Target="30303" Default="30303" Mode="tcp" Description="listener (TCP) port" Type="Port" Display="advanced" Required="true" Mask="false">30303</Config>
   <Config Name="discovery " Target="30303" Default="30303" Mode="udp" Description="discovery (UDP) port" Type="Port" Display="advanced" Required="true" Mask="false">30303</Config>
-  <Config Name="base-path" Target="/home/openethereum/.local/share/openethereum/" Default="/mnt/user/appdata/openethereum" Mode="rw" Description="Persistent data directory for blockchain files, keys" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/docker/</Config>
 </Container>
