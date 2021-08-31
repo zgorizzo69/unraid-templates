@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>geth-ethereum</Name>
+  <Repository>ethereum/client-go</Repository>
+  <Registry>https://hub.docker.com/r/ethereum/client-go/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ethereum/go-ethereum</Support>
+  <Project>https://github.com/ethereum/go-ethereum</Project>
+  <Overview>Official golang implementation of the Ethereum protocol.</Overview>
+  <Category>Other:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://geth.ethereum.org/static/images/favicon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1630425336</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Official golang implementation of the Ethereum protocol.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8545</HostPort>
+        <ContainerPort>8545</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8546</HostPort>
+        <ContainerPort>8546</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>30303</HostPort>
+        <ContainerPort>30303</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>30303</HostPort>
+        <ContainerPort>30303</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/blockchain/ethereum/</HostDir>
+      <ContainerDir>/root/.ethereum</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="JSON-RPC HTTP" Target="8545" Default="" Mode="tcp" Description="JSON-RPC HTTP server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8545</Config>
+  <Config Name="JSON-RPC Web-Socket" Target="8546" Default="" Mode="tcp" Description="Web-Sockets server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8546</Config>
+  <Config Name="listener" Target="30303" Default="" Mode="tcp" Description="listener (TCP) port" Type="Port" Display="always" Required="true" Mask="false">30303</Config>
+  <Config Name="discovery" Target="30303" Default="" Mode="udp" Description="discovery (UDP) port" Type="Port" Display="always" Required="true" Mask="false">30303</Config>
+  <Config Name="data-path" Target="/root/.ethereum" Default="/mnt/user/appdata/ethereum" Mode="rw" Description="Persistent data directory for blockchain files, keys" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/blockchain/ethereum/</Config>
+</Container>
