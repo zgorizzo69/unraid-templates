@@ -15,9 +15,9 @@
   <TemplateURL/>
   <Icon>https://geth.ethereum.org/static/images/favicon.png</Icon>
   <ExtraParams/>
-  <PostArgs/>
+  <PostArgs>--http --http.corsdomain localhost --ws --ws.origins localhost --ipcdisable</PostArgs>
   <CPUset/>
-  <DateInstalled>1630425336</DateInstalled>
+  <DateInstalled>1630432433</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Official golang implementation of the Ethereum protocol.</Description>
