@@ -10,7 +10,7 @@
   <Support>https://github.com/ethereum/go-ethereum</Support>
   <Project>https://github.com/ethereum/go-ethereum</Project>
   <Overview>Official golang implementation of the Ethereum protocol.</Overview>
-  <Category>Other:</Category>
+  <Category>Other: Crypto:</Category>
   <WebUI/>
   <TemplateURL/>
   <Icon>https://geth.ethereum.org/static/images/favicon.png</Icon>
