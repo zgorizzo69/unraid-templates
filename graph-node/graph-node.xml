@@ -9,19 +9,21 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/graphprotocol/graph-node</Support>
   <Project>https://github.com/graphprotocol/graph-node</Project>
-  <Overview>The Graph is a protocol for building decentralized applications (dApps) quickly on Ethereum and IPFS using GraphQL.</Overview>
+  <Overview>The Graph is a protocol for building decentralized applications (dApps) quickly on Ethereum and IPFS using GraphQL.&#xD;
+Graph Node is an open source Rust implementation that event sources the Ethereum blockchain to deterministically update a data store that can be queried via the GraphQL endpoint.&#xD;
+For detailed instructions and more context, check out the Getting Started Guide.</Overview>
   <Category>Other: Crypto:</Category>
   <WebUI/>
   <TemplateURL/>
   <Icon>https://storage.googleapis.com/graph-web/favicon.png</Icon>
   <ExtraParams/>
-  <PostArgs>--release --postgres-url postgresql://USERNAME[:PASSWORD]@localhost:5432/graph-node --ethereum-rpc localhost:8545  --ipfs localhost:5001 </PostArgs>
+  <PostArgs/>
   <CPUset/>
-  <DateInstalled>1632753813</DateInstalled>
+  <DateInstalled>1632757900</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>The Graph is a protocol for building decentralized applications (dApps) quickly on Ethereum and IPFS using GraphQL.
-Graph Node is an open source Rust implementation that event sources the Ethereum blockchain to deterministically update a data store that can be queried via the GraphQL endpoint.
+  <Description>The Graph is a protocol for building decentralized applications (dApps) quickly on Ethereum and IPFS using GraphQL.&#xD;
+Graph Node is an open source Rust implementation that event sources the Ethereum blockchain to deterministically update a data store that can be queried via the GraphQL endpoint.&#xD;
 For detailed instructions and more context, check out the Getting Started Guide.</Description>
   <Networking>
     <Mode>bridge</Mode>
@@ -44,9 +46,52 @@ For detailed instructions and more context, check out the Getting Started Guide.
     </Publish>
   </Networking>
   <Data/>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Value>localhost:5432</Value>
+      <Name>postgres_host</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>dsmrreader</Value>
+      <Name>postgres_user</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>dsmrreader</Value>
+      <Name>postgres_pass</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>graph-node</Value>
+      <Name>postgres_db</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>localhost:5001</Value>
+      <Name>ipfs</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>http://localhost:8545</Value>
+      <Name>ethereum</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>info</Value>
+      <Name>GRAPH_LOG</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
   <Labels/>
-  <Config Name="GraphQL interface" Target="8000" Default="" Mode="tcp" Description=" GraphQL interface" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name=" GraphQL interface" Target="8000" Default="" Mode="tcp" Description=" GraphQL interface" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="JSON-RPC" Target="8020" Default="" Mode="tcp" Description="JSON-RPC admin server." Type="Port" Display="always" Required="true" Mask="false">8020</Config>
   <Config Name="GraphQL WebSocket" Target="8001" Default="" Mode="tcp" Description="GraphQL WebSocket server" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
+  <Config Name="postgres host" Target="postgres_host" Default="localhost:5432" Mode="" Description="postgres_host" Type="Variable" Display="always" Required="true" Mask="false">localhost:5432</Config>
+  <Config Name="postgres user" Target="postgres_user" Default="USERNAME" Mode="" Description="postgre user" Type="Variable" Display="always" Required="true" Mask="false">dsmrreader</Config>
+  <Config Name="postgres password" Target="postgres_pass" Default="PASSWORD" Mode="" Description="postgres password" Type="Variable" Display="always" Required="true" Mask="true">dsmrreader</Config>
+  <Config Name="postgres_db" Target="postgres_db" Default="graph-node" Mode="" Description="postgres db name" Type="Variable" Display="always" Required="true" Mask="false">graph-node</Config>
+  <Config Name="ipfs url" Target="ipfs" Default="ipfs:5001" Mode="" Description="Container Variable: ipfs" Type="Variable" Display="always" Required="true" Mask="false">localhost:5001</Config>
+  <Config Name="ethereum node url" Target="ethereum" Default="mainnet:http://localhost:8545" Mode="" Description="ethereum node url" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8545</Config>
+  <Config Name="GRAPH_LOG" Target="GRAPH_LOG" Default="info" Mode="" Description="log level" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
 </Container>
