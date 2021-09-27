@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>graph-node</Name>
+  <Repository>graphprotocol/graph-node</Repository>
+  <Registry>https://hub.docker.com/r/graphprotocol/graph-node/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/graphprotocol/graph-node</Support>
+  <Project>https://github.com/graphprotocol/graph-node</Project>
+  <Overview>The Graph is a protocol for building decentralized applications (dApps) quickly on Ethereum and IPFS using GraphQL.</Overview>
+  <Category>Other: Crypto:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://storage.googleapis.com/graph-web/favicon.png</Icon>
+  <ExtraParams/>
+  <PostArgs>--release --postgres-url postgresql://USERNAME[:PASSWORD]@localhost:5432/graph-node --ethereum-rpc localhost:8545  --ipfs localhost:5001 </PostArgs>
+  <CPUset/>
+  <DateInstalled>1632753813</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>The Graph is a protocol for building decentralized applications (dApps) quickly on Ethereum and IPFS using GraphQL.
+Graph Node is an open source Rust implementation that event sources the Ethereum blockchain to deterministically update a data store that can be queried via the GraphQL endpoint.
+For detailed instructions and more context, check out the Getting Started Guide.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8020</HostPort>
+        <ContainerPort>8020</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8001</HostPort>
+        <ContainerPort>8001</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="GraphQL interface" Target="8000" Default="" Mode="tcp" Description=" GraphQL interface" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="JSON-RPC" Target="8020" Default="" Mode="tcp" Description="JSON-RPC admin server." Type="Port" Display="always" Required="true" Mask="false">8020</Config>
+  <Config Name="GraphQL WebSocket" Target="8001" Default="" Mode="tcp" Description="GraphQL WebSocket server" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
+</Container>
