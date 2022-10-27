@@ -15,7 +15,7 @@
   <TemplateURL/>
   <Icon>https://geth.ethereum.org/static/images/favicon.png</Icon>
   <ExtraParams/>
-  <PostArgs>--http --http.corsdomain localhost --ws --ws.origins localhost --ipcdisable</PostArgs>
+  <PostArgs>--http --http.corsdomain localhost --ws --ws.origins localhost --http.api eth,net,engine,admin --authrpc.jwtsecret /root/.ethereum/jwt.hex </PostArgs>
   <CPUset/>
   <DateInstalled>1630432433</DateInstalled>
   <DonateText/>
@@ -32,6 +32,11 @@
       <Port>
         <HostPort>8546</HostPort>
         <ContainerPort>8546</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+        <Port>
+        <HostPort>8551</HostPort>
+        <ContainerPort>8551</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
@@ -55,9 +60,11 @@
   </Data>
   <Environment/>
   <Labels/>
+  <Config Name="consensus Web-Socket" Target="8551" Default="" Mode="tcp" Description="Communication with consensus layer (beacon)" Type="Port" Display="always" Required="false" Mask="false">8551</Config>
   <Config Name="JSON-RPC HTTP" Target="8545" Default="" Mode="tcp" Description="JSON-RPC HTTP server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8545</Config>
   <Config Name="JSON-RPC Web-Socket" Target="8546" Default="" Mode="tcp" Description="Web-Sockets server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8546</Config>
   <Config Name="listener" Target="30303" Default="" Mode="tcp" Description="listener (TCP) port" Type="Port" Display="always" Required="true" Mask="false">30303</Config>
   <Config Name="discovery" Target="30303" Default="" Mode="udp" Description="discovery (UDP) port" Type="Port" Display="always" Required="true" Mask="false">30303</Config>
   <Config Name="data-path" Target="/root/.ethereum" Default="/mnt/user/appdata/ethereum" Mode="rw" Description="Persistent data directory for blockchain files, keys" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/blockchain/ethereum/</Config>
+
 </Container>

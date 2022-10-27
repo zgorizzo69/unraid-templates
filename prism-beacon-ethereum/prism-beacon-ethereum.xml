@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>prism-beacon-ethereum</Name>
+  <Repository>prysmaticlabs/prysm-beacon-chain</Repository>
+  <Registry>https://hub.docker.com/r/prysmaticlabs/prysm-beacon-chain</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>hhttps://docs.prylabs.network/docs/install/install-with-docker</Support>
+  <Project>https://docs.prylabs.network/docs/how-prysm-works/beacon-node</Project>
+  <Overview>Ethereum 2.0 Beacon Chain implementation by Prysmatic Labs.</Overview>
+  <Category>Other: Crypto:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://prysmaticlabs.com/assets/Prysm.svg</Icon>
+  <ExtraParams/>
+  <PostArgs>--datadir=/data  --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=http://geth-ethereum:8551 --jwt-secret=/data/jwt.hex</PostArgs>
+  <CPUset/>
+  <DateInstalled>1612536464</DateInstalled>
+  <DonateText>HELP !!!</DonateText>
+  <DonateLink>0x2C8c354Bf6E8406682587890A532691a1947aE0e</DonateLink>
+  <Description>Ethereum 2.0 Beacon Chain implementation by Prysmatic Labs.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3500</HostPort>
+        <ContainerPort>3500</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>4000</HostPort>
+        <ContainerPort>4000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>13000</HostPort>
+        <ContainerPort>13000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port> 
+      <Port>
+        <HostPort>12000</HostPort>
+        <ContainerPort>12000</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/blockchain/ethereum/</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="JSON-RPC HTTP" Target="3500" Default="3500" Mode="tcp" Description="JSON-RP beacon node's Query API." Type="Port" Display="always" Required="true" Mask="false">3500</Config>
+  <Config Name="Web-Sockets server" Target="4000" Default="4000" Mode="tcp" Description="Validator uses this port to connect to your beacon node via gRPC." Type="Port" Display="always" Required="true" Mask="false">4000</Config>
+  <Config Name="data-path" Target="/data" Default="/mnt/user/appdata/prism" Mode="rw" Description="Persistent data directory for blockchain files, keys" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/blockchain/prism/</Config>
+  <Config Name="listener" Target="13000" Default="13000" Mode="tcp" Description="listener (TCP) port" Type="Port" Display="advanced" Required="true" Mask="false">13000</Config>
+  <Config Name="discovery " Target="12000" Default="12000" Mode="udp" Description="discovery (UDP) port" Type="Port" Display="advanced" Required="true" Mask="false">12000</Config>
+</Container>
