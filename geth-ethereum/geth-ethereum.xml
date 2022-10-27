@@ -15,7 +15,7 @@
   <TemplateURL/>
   <Icon>https://geth.ethereum.org/static/images/favicon.png</Icon>
   <ExtraParams/>
-  <PostArgs>--http --http.corsdomain localhost --ws --ws.origins localhost --http.api eth,net,engine,admin --authrpc.jwtsecret /root/.ethereum/jwt.hex </PostArgs>
+  <PostArgs>--http --http.corsdomain localhost --ws --ws.origins localhost --http.api eth,net,engine,admin --authrpc.jwtsecret /root/.ethereum/jwt.hex --authrpc.vhosts=* --authrpc.addr=geth-ethereum </PostArgs>
   <CPUset/>
   <DateInstalled>1630432433</DateInstalled>
   <DonateText/>
