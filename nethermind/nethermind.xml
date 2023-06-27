@@ -1,0 +1,36 @@
+<?xml version="1.0"?> 
+<Container version="2">
+  <Name>nethermind-ethereum</Name>
+  <Repository>nethermind/nethermind</Repository>
+  <Registry>https://hub.docker.com/r/nethermind/nethermind/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/NethermindEth/nethermind</Support>
+  <Project>https://github.com/NethermindEth/nethermind</Project>
+  <Overview>Official .net implementation of the Ethereum protocol.</Overview>
+  <Category>Other: Crypto:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://nethermind.io/wp-content/themes/nethermind/images/logo.svg</Icon>
+  <ExtraParams/>
+  <PostArgs>--datadir data</PostArgs>
+  <CPUset/>
+  <DateInstalled>1687816917</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="JSON-RPC HTTP" Target="8545" Default="" Mode="tcp" Description="JSON-RPC HTTP server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8545</Config>
+  <Config Name="JSON-RPC Web-Socket" Target="8546" Default="" Mode="tcp" Description="Web-Sockets server supports a number of APIs." Type="Port" Display="always" Required="true" Mask="false">8546</Config>
+  <Config Name="listener" Target="30303" Default="" Mode="tcp" Description="listener (TCP) port" Type="Port" Display="always" Required="true" Mask="false">30303</Config>
+  <Config Name="discovery" Target="30303" Default="" Mode="udp" Description="discovery (UDP) port" Type="Port" Display="always" Required="true" Mask="false">30303</Config>
+  <Config Name="data-path" Target="/nethermind/data" Default="/mnt/user/appdata/ethereum" Mode="rw" Description="Persistent data directory for blockchain files, keys" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/blockchain/ethereum/</Config>
+  <Config Name="NETHERMIND_INITCONFIG_ISMINING" Target="NETHERMIND_INITCONFIG_ISMINING" Default="false" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="NETHERMIND_JSONRPCCONFIG_ENABLED" Target="NETHERMIND_JSONRPCCONFIG_ENABLED" Default="true" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="NETHERMIND_JSONRPCCONFIG_HOST" Target="NETHERMIND_JSONRPCCONFIG_HOST" Default="0.0.0.0" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="NETHERMIND_JSONRPCCONFIG_ENGINEHOST" Target="NETHERMIND_JSONRPCCONFIG_ENGINEHOST" Default="0.0.0.0" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="NETHERMIND_JSONRPCCONFIG_ENGINEPORT" Target="NETHERMIND_JSONRPCCONFIG_ENGINEPORT" Default="8551" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">8551</Config>
+  <Config Name="NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE" Target="NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE" Default="/nethermind/data/keystore/jwt-secret/jwt.hex" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">/nethermind/data/keystore/jwt-secret/jwt.hex</Config>
+  
+</Container>
