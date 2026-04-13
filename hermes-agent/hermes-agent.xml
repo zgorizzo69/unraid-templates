@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>hermes-agent</Name>
+  <Repository>nousresearch/hermes-agent:latest</Repository>
+  <Registry>https://hub.docker.com/r/nousresearch/hermes-agent/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/NousResearch/hermes-agent</Support>
+  <Project>https://hermes-agent.nousresearch.com/</Project>
+  <Overview>Hermes Agent in Docker. Stores all config, memory, sessions, and skills in /opt/data.</Overview>
+  <Category>Other: AI:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/NousResearch/hermes-agent/main/assets/banner.png</Icon>
+  <ExtraParams>--shm-size=1g</ExtraParams>
+  <PostArgs>gateway run</PostArgs>
+  <CPUset/>
+  <DateInstalled>0</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Hermes Agent container for persistent gateway mode or interactive CLI usage.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8642</HostPort>
+        <ContainerPort>8642</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/hermes-agent</HostDir>
+      <ContainerDir>/opt/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="API server enabled" Target="API_SERVER_ENABLED" Default="true" Mode="" Description="Enable Hermes OpenAI-compatible API for Open WebUI integration." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="API server host" Target="API_SERVER_HOST" Default="0.0.0.0" Mode="" Description="Bind API server on all interfaces so Unraid port mapping works." Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0</Config>
+  <Config Name="API server port" Target="API_SERVER_PORT" Default="8642" Mode="" Description="Hermes API server port used by Open WebUI (/v1)." Type="Variable" Display="always" Required="true" Mask="false">8642</Config>
+  <Config Name="API server key" Target="API_SERVER_KEY" Default="change-me" Mode="" Description="Bearer token. Set a strong value and use the same value in Open WebUI OPENAI_API_KEY." Type="Variable" Display="always" Required="true" Mask="true">change-me</Config>
+  <Config Name="Telegram bot token" Target="TELEGRAM_BOT_TOKEN" Default="" Mode="" Description="Telegram bot token from @BotFather." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Telegram allowed users" Target="TELEGRAM_ALLOWED_USERS" Default="" Mode="" Description="Comma-separated Telegram user IDs allowed to use your bot." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="OpenRouter API key" Target="OPENROUTER_API_KEY" Default="" Mode="" Description="OpenRouter provider API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="OpenAI API key" Target="OPENAI_API_KEY" Default="" Mode="" Description="OpenAI (or OpenAI-compatible) provider API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Anthropic API key" Target="ANTHROPIC_API_KEY" Default="" Mode="" Description="Anthropic provider API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="AI Gateway API key" Target="AI_GATEWAY_API_KEY" Default="" Mode="" Description="Vercel AI Gateway API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="GLM API key" Target="GLM_API_KEY" Default="" Mode="" Description="z.ai / ZhipuAI GLM provider API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Kimi API key" Target="KIMI_API_KEY" Default="" Mode="" Description="Kimi / Moonshot provider API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="MiniMax API key" Target="MINIMAX_API_KEY" Default="" Mode="" Description="MiniMax global API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="MiniMax CN API key" Target="MINIMAX_CN_API_KEY" Default="" Mode="" Description="MiniMax China endpoint API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Kilo Code API key" Target="KILOCODE_API_KEY" Default="" Mode="" Description="Kilo Code API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Xiaomi API key" Target="XIAOMI_API_KEY" Default="" Mode="" Description="Xiaomi MiMo API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Hugging Face token" Target="HF_TOKEN" Default="" Mode="" Description="Hugging Face Inference Providers token." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Google API key" Target="GOOGLE_API_KEY" Default="" Mode="" Description="Google AI Studio API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Groq API key" Target="GROQ_API_KEY" Default="" Mode="" Description="Groq API key (for Groq Whisper STT)." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="DashScope API key" Target="DASHSCOPE_API_KEY" Default="" Mode="" Description="Alibaba DashScope API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="DeepSeek API key" Target="DEEPSEEK_API_KEY" Default="" Mode="" Description="DeepSeek API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="OpenCode Zen API key" Target="OPENCODE_ZEN_API_KEY" Default="" Mode="" Description="OpenCode Zen API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="OpenCode Go API key" Target="OPENCODE_GO_API_KEY" Default="" Mode="" Description="OpenCode Go API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Hermes data path" Target="/opt/data" Default="/mnt/user/appdata/hermes-agent" Mode="rw" Description="Persistent Hermes data directory (.env, config.yaml, skills, memories, logs)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent</Config>
+  <Config Name="Gateway/API port (optional)" Target="8642" Default="" Mode="tcp" Description="Expose only if you enable Hermes API/gateway HTTP endpoint in config." Type="Port" Display="advanced" Required="false" Mask="false">8642</Config>
+</Container>
