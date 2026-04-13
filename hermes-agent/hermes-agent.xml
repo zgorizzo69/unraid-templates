@@ -63,6 +63,8 @@
   <Config Name="DeepSeek API key" Target="DEEPSEEK_API_KEY" Default="" Mode="" Description="DeepSeek API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
   <Config Name="OpenCode Zen API key" Target="OPENCODE_ZEN_API_KEY" Default="" Mode="" Description="OpenCode Zen API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
   <Config Name="OpenCode Go API key" Target="OPENCODE_GO_API_KEY" Default="" Mode="" Description="OpenCode Go API key." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Tavily API key" Target="TAVILY_API_KEY" Default="" Mode="" Description="Tavily API key for AI-native web search, extract, and crawl." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Exa API key" Target="EXA_API_KEY" Default="" Mode="" Description="Exa API key for AI-native web search and content retrieval." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
   <Config Name="Hermes data path" Target="/opt/data" Default="/mnt/user/appdata/hermes-agent" Mode="rw" Description="Persistent Hermes data directory (.env, config.yaml, skills, memories, logs)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hermes-agent</Config>
   <Config Name="Gateway/API port (optional)" Target="8642" Default="" Mode="tcp" Description="Expose only if you enable Hermes API/gateway HTTP endpoint in config." Type="Port" Display="advanced" Required="false" Mask="false">8642</Config>
 </Container>
